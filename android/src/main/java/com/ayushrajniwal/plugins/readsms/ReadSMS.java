@@ -1,8 +1,14 @@
 package com.ayushrajniwal.plugins.readsms;
 
+import java.util.ArrayList;
+
 public class ReadSMS {
 
-    public String echo(String value) {
-        return value;
+    public ArrayList getSMS(String filter) {
+        return null;
     }
+
+    public void checkPermission() {}
+
+    public void requestForPermission() {}
 }
