@@ -1,13 +1,21 @@
 # read-sms
 
-Capacitor Plugin to read the user's SMS
+Capacitor Plugin to read the user's SMS.
+
+
+### [Demo](https://github.com/Ayush-Rajniwal/Capacitor-read-sms-plugin-demo)
 
 ## Install
-
-```bash
-npm install read-sms
-npx cap sync
-```
+- Clone this repo.
+- [Locally install this plugin in your project.](https://stackoverflow.com/questions/8088795/installing-a-local-module-using-npm)
+- Assuming you cloned this repo one directory above your current project directory, then do this
+    ```bash
+    npm install ../read-sms
+    ```
+- Sync the plugin with capacitor.
+    ```bash
+    npx cap sync
+    ```
 
 ## Supported Platforms
 
