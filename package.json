@@ -1,6 +1,6 @@
 {
   "name": "cap-read-sms",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Capacitor Plugin to read the user's SMS",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -17,10 +17,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ayush-Rajniwal/read-sms.git"
+    "url": "git+https://github.com/Ayush-Rajniwal/cap-read-sms.git"
   },
   "bugs": {
-    "url": "https://github.com/Ayush-Rajniwal/read-sms/issues"
+    "url": "https://github.com/Ayush-Rajniwal/cap-read-sms/issues"
   },
   "keywords": [
     "capacitor",

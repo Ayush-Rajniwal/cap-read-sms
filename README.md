@@ -1,4 +1,4 @@
-# read-sms
+# cap-read-sms
 
 Capacitor Plugin to read the user's SMS (with their permission)
 
@@ -39,17 +39,6 @@ npx cap sync
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getSMS(...)
-
-- Read User's SMS if permission is granted.
-- If permission is not granted it will request for the permission first.
-- Return the array of objects having keys from `SMS_INTERFACE`.
-- You can fiter SMS by passing an object to getSMS.
-
-| Options Value | Default Value | Comment                                                                              |
-| ------------- | ------------- | ------------------------------------------------------------------------------------ |
-| timestamp     | 0             | Make sure the timestamp have 13 digit (i.e It should represent milliseconds format). |
-| pageSize      | 10            | Number of messages that will be return.                                              |
-| sender        | N/A           | By Default no sender value is applied .                                              |
 
 ```typescript
 getSMS(options: { timestamp?: string; pageSize?: number; sender?: string; }) => any
