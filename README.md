@@ -1,37 +1,37 @@
 # read-sms
 
-Capacitor Plugin to read the user's SMS.
-
+Capacitor Plugin to read the user's SMS (with their permission)
 
 ### [Demo](https://github.com/Ayush-Rajniwal/Capacitor-read-sms-plugin-demo)
 
 ## Install
-- Clone this repo.
-- [Locally install this plugin in your project.](https://stackoverflow.com/questions/8088795/installing-a-local-module-using-npm)
-- Assuming you cloned this repo one directory above your current project directory, then do this
-    ```bash
-    npm install ../read-sms
-    ```
-- Sync the plugin with capacitor.
-    ```bash
-    npx cap sync
-    ```
+
+```bash
+npm install cap-read-sms
+```
+
+Sync the plugin with capacitor.
+
+```bash
+npx cap sync
+```
 
 ## Supported Platforms
 
 | Platforms | Supported |
-|-----------|-----------|
-| Android   |     ✅     |
-| iOS       |     ❌     |
-| Web       |     🤷‍♂️     |
+| --------- | --------- |
+| Android   | ✅        |
+| iOS       | ❌        |
+| Web       | 🤷‍♂️        |
+
 ## API
 
 <docgen-index>
 
-* [`getSMS(...)`](#getsms)
-* [`checkPermission()`](#checkpermission)
-* [`requestPermission()`](#requestpermission)
-* [Interfaces & Types](#interfaces)
+- [`getSMS(...)`](#getsms)
+- [`checkPermission()`](#checkpermission)
+- [`requestPermission()`](#requestpermission)
+- [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -39,100 +39,51 @@ Capacitor Plugin to read the user's SMS.
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### getSMS(...)
+
 - Read User's SMS if permission is granted.
 - If permission is not granted it will request for the permission first.
-- Return the array of objects having keys from ```SMS_INTERFACE```.
+- Return the array of objects having keys from `SMS_INTERFACE`.
 - You can fiter SMS by passing an object to getSMS.
 
-| Options Value      	| Default Value 	| Comment                                                                               	|
-|-----------	|---------------	|---------------------------------------------------------------------------------------	|
-| timestamp 	|       0       	| Make sure the timestamp have 13 digit (i.e It should represent milliseconds format).  	|
-| pageSize  	|       10      	| Number of messages that will be return.                                               	|
-| sender    	|      N/A      	| By Default no sender value is applied  .                                               	|
+| Options Value | Default Value | Comment                                                                              |
+| ------------- | ------------- | ------------------------------------------------------------------------------------ |
+| timestamp     | 0             | Make sure the timestamp have 13 digit (i.e It should represent milliseconds format). |
+| pageSize      | 10            | Number of messages that will be return.                                              |
+| sender        | N/A           | By Default no sender value is applied .                                              |
 
 ```typescript
-getSMS(options: {
-    timestamp?: string;
-    pageSize?: number;
-    sender?: string;
-}) => SMS_INTERFACE[]
+getSMS(options: { timestamp?: string; pageSize?: number; sender?: string; }) => any
 ```
 
 | Param         | Type                                                                     |
 | ------------- | ------------------------------------------------------------------------ |
 | **`options`** | <code>{ timestamp?: string; pageSize?: number; sender?: string; }</code> |
 
-**Returns:** <code>SMS_INTERFACE[]</code>
+**Returns:** <code>any</code>
 
---------------------
-
+---
 
 ### checkPermission()
-- Check if user has granted the SMS Read permission.
-- Value return is either ```granted``` OR ```denied```.
 
 ```typescript
-checkPermission() => PERMISSION
+checkPermission() => any
 ```
 
-**Returns:** <code>PERMISSION</code>
+**Returns:** <code>any</code>
 
---------------------
+---
 
 ### requestPermission()
-- Request the User for the SMS Read permission.
-- Return ```granted``` if user accepts the permission, otherwise returns ```denied```.
 
 ```typescript
-requestPermission() => PERMISSION
+requestPermission() => any
 ```
 
-**Returns:** <code>PERMISSION</code>
+**Returns:** <code>any</code>
 
---------------------
+---
 
-## Sample Usage
-[Complete Example](https://github.com/Ayush-Rajniwal/Capacitor-read-sms-plugin-demo)
-```typescript
-...
-import { Plugins } from "@capacitor/core";
-import "read-sms";
-const { ReadSMS } = Plugins;
-...
-
-const Home: React.FC = () => {
-
-const [msg, setMsg] = useState<any>([]);
-const [permStatus, setPermStatus] = useState("");
-const readSMS = async () => {
-    const sms = (await ReadSMS.getSMS()).value;
-    setMsg((val:any) => [...val, ...sms]);
-    console.log(sms, "value of SMS");
-}
-
-const requestPermission = async () => {
-    const permission = (await ReadSMS.requestPermission()).value;
-setPermStatus(permission);
-    console.log(permission, "permission");
-}
-
-const checkPermission = async () => {
-    const permission = (await ReadSMS.checkPermission()).value;
-setPermStatus(permission);
-    console.log(permission, "checkPermission");
-}
-return <YOUR_JSX_CODE/>
-}
-```
---------------------
-
-### Interfaces & TYPES
-
-### PERMISSION
-Possible values:
--  ```granted```
- - ```denied```
-
+### Interfaces
 
 #### SMS_INTERFACE
 

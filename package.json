@@ -1,6 +1,6 @@
 {
-  "name": "read-sms",
-  "version": "0.0.1",
+  "name": "cap-read-sms",
+  "version": "0.0.2",
   "description": "Capacitor Plugin to read the user's SMS",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
